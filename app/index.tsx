@@ -1,6 +1,6 @@
 import { useFonts } from "expo-font";
 import { View } from "react-native";
-import SignUp from "./SignUp";
+import SignUp from "./(auth)/SignUp";
 
 const HomeScreen = () => {
   const [fontsLoaded] = useFonts({

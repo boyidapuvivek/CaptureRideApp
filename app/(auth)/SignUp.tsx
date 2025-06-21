@@ -1,15 +1,16 @@
 import Google from "@/assets/images/google.svg";
 import TextInputField from "@/components/TextInputField";
 import Colors from "@/constants/Colors";
-import {
-  Pressable,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { useRouter } from "expo-router";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 const SignUpScreen = () => {
+  const router = useRouter();
+
+  const handelPress = () => {
+    router.push("/LoginScreen");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.maincontainer}>
@@ -42,17 +43,17 @@ const SignUpScreen = () => {
       </View>
       <View style={styles.bottomContainer}>
         <Pressable
-          onPress={() => {
-            // Handle sign up logic here
-          }}
+          onPress={() => {}}
           style={styles.button}>
           <Text style={styles.buttontext}>Sign Up</Text>
         </Pressable>
-        <Text>
+        <Text style={styles.login}>
           Do you have account?{" "}
-          <TouchableOpacity>
-            <Text>Sign Up</Text>
-          </TouchableOpacity>
+          <Text
+            style={styles.logintext}
+            onPress={handelPress}>
+            Login
+          </Text>
         </Text>
       </View>
     </View>
@@ -74,7 +75,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     paddingTop: 50,
     gap: 20,
-    paddingHorizontal: 10,
   },
   text: {
     fontFamily: "poppins-semibold",
@@ -83,39 +83,45 @@ const styles = StyleSheet.create({
   },
   signup: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
     gap: 10,
     backgroundColor: Colors.transparent,
     borderRadius: 18,
-    paddingHorizontal: 10,
-    paddingVertical: 4,
+    paddingHorizontal: 18,
+    paddingVertical: 10,
   },
   signuptext: {
     fontFamily: "poppins-medium",
     fontSize: 16,
     color: Colors.gray,
-    marginTop: 10,
   },
   bottomContainer: {
     width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 10,
+    gap: 16,
     paddingBottom: 20,
+    alignItems: "center",
   },
   button: {
+    justifyContent: "center",
     height: 50,
     width: "100%",
     backgroundColor: Colors.primary,
-    borderRadius: 5,
+    borderRadius: 12,
     paddingVertical: 10,
   },
   buttontext: {
-    fontFamily: "poppins-semibold",
+    textAlign: "center",
+    fontFamily: "poppins-medium",
     fontSize: 16,
     color: Colors.white,
-    textAlign: "center",
+  },
+  login: {
+    fontFamily: "poppins-regular",
+    fontSize: 14,
+  },
+  logintext: {
+    fontFamily: "poppins-regular",
+    fontSize: 14,
+    color: Colors.primary,
   },
 });
 

@@ -34,12 +34,12 @@ const styles = StyleSheet.create({
   },
   textInput: {
     backgroundColor: Colors.transparent,
-    paddingHorizontal: 12,
-    paddingVertical: 4,
+    paddingHorizontal: 18,
+    paddingVertical: 22,
     borderRadius: 18,
     fontFamily: "poppins-regular",
     color: Colors.black,
-    height: 50,
+    height: "auto",
   },
 });
 
